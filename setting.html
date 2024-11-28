@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>设置页面</title>
+<style>
+  body, html {
+    background-image: url('background2.png');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    text-align: center;
+    background: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    font-size: 1.5em;
+    color: #333;
+  }
+
+  input[type="range"] {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #A52A2A;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #7B3E3E;
+  }
+</style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>音效设置</h1>
+    <label for="sound-checkbox">是否打开音效:</label>
+    <input id="sound-checkbox" type="checkbox" checked>
+    <h1></h1>
+    <button onclick="saveSettings()">保存</button>
+    <h1>游戏教程</h1>
+    <button onclick="teachGame()">点击查看</button>
+    <h1>制作者名单</h1>
+    <button onclick="checkOnProducers()">点击查看</button>
+    
+
+    
+  </div>
+
+  <script>
+    // 初始化音效开关
+    const soundCheckbox = document.getElementById('sound-checkbox');
+
+    // 保存音效设置
+    function saveSettings() {
+      const soundEnabled = soundCheckbox.checked;
+
+      // 保存音效设置到 localStorage
+      localStorage.setItem('soundEnabled', soundEnabled);
+
+      // 返回主页面
+      window.location.href = 'index.html';
+    }
+  </script>
+
+</body>
+</html>
